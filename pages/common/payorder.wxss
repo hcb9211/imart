@@ -1,0 +1,25 @@
+/*支付成功 复合页面 ***************************** */
+/*主题背景  */
+page{background: rgb(246, 246, 246);font-family: "微软雅黑";}
+/*当个背景  */
+.acc-content,.acc-message{background-color: #fff;}
+/* 上部内容展示 */
+.acc-content-icon,.acc-content-pay,.acc-content-hint,.acc-content-erweima,.acc-content-num{text-align: center;}
+.acc-content-icon{padding-top: 60rpx;}
+.acc-content-icon>image{width: 60rpx;height: 60rpx;}
+.acc-content-pay{margin-top: 30rpx;font-size: 34rpx;color: #d02e2e}
+.acc-content-hint{margin-top: 60rpx; font-size: 30rpx;color: #444}
+.acc-content-erweima{margin-top: 30rpx;}
+.acc-content-erweima>image{width: 514rpx;height: 170rpx;}
+.acc-content-num{margin-top: 30rpx;padding-bottom: 50rpx; font-size: 30rpx;color: #444}
+/*商店名称  */
+.acc-commname{height: 50rpx;}
+.acc-commname image{margin-left: 20rpx;margin-right: 20rpx; width: 38rpx;height: 34rpx;vertical-align:middle }
+.acc-commname text{vertical-align:middle;font-size: 24rpx; color: #777 }
+/*下部信息展示  */
+.acc-message{margin-top: 20rpx;padding:30rpx 0rpx 30rpx 20rpx;}
+.acc-message>view{line-height: 55rpx;font-size: 36rpx;color: #444}
+.acc-message view text{font-size: 30rpx;} 
+.acc-message-money text{font-size: 36rpx!important; color: #d02e2e}
+/*查看订单按钮  */
+.acc-look{position: fixed;bottom: 0rpx;width: 100%;height: 110rpx; background: rgb(208, 46, 46);text-align: center;line-height: 110rpx;color: #fff;font-size: 36rpx;}

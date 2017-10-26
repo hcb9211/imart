@@ -1,0 +1,135 @@
+@import '/pages/index/sucbean/sucbean.wxss';
+@import '/pages/index/manual/manual.wxss';
+page{
+  overflow: hidden!important;
+}
+
+.index_app{
+  overflow: hidden!important;
+}
+.index_container,.index_page-body,swiper{
+  width:100%;
+  height: 680rpx;
+  padding:0;
+  border-bottom: 1rpx solid #D6D6D6; 
+   overflow: hidden; 
+}
+ swiper image{
+   width:100%;
+   height:100%;  
+} 
+image{
+  width:100%;
+}
+.index_storePos{
+  width:100%;
+  height:100rpx;
+  padding:0 20rpx;
+  font-size: 30rpx;
+}
+.index_iconposbox{
+  width:36rpx;
+  height: 100%;
+  padding-top: 27rpx;
+  box-sizing: border-box;
+  float: left;
+  margin-right:10rpx;
+}
+.index_iconposbox image{
+  width:36rpx;
+  height:46rpx;
+  text-align: center;
+}
+.index_postext{
+  line-height: 100rpx;
+  color: #464646;
+}
+.index_storenamebox{
+  width:60%;
+  height: 100%;
+  float: right;
+  margin-right:40rpx;
+}
+.index_storename{
+  width:85%;
+  height: 100%;
+  float:left;
+  line-height: 100rpx;
+  color:#464646;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: right;
+  margin-right: 20rpx;
+}
+.index_checkbtn{
+  width:10%;
+  float: right;
+}
+.index_checkbtn image{
+  width:44rpx;
+  height:38rpx;
+  float: right;
+  margin-top:31rpx;
+}
+.index_couponbox{
+  width:100%;
+  height:330rpx;
+  background: #f6f6f6;  
+}
+.index_coupon{
+  width:126rpx;
+  height: 126rpx;
+  float: left;
+  margin-bottom: 16rpx;
+}
+.index_coupons{
+  width:126rpx;
+  height:180rpx;  
+  float: left;
+  margin-top:102rpx; 
+  color:#222;
+  text-align: center;  
+  font-size:24rpx; 
+  margin-left:90rpx;
+}
+.index_scancode{
+  width:194rpx;
+  height: 194rpx;
+  float: left;
+}
+.index_scancodes{
+    width:194rpx;
+    height:230rpx;
+    float: left;
+    margin-left:66rpx;
+    margin-top:50rpx;   
+   color:#222;
+   text-align: center;  
+   font-size: 24rpx;
+}
+.index_manualbox{
+  width:100%;
+}
+.index_manualscancode{
+  width:126rpx;
+  height: 126rpx;
+  float: left;
+  margin-bottom: 16rpx;
+  margin-left: 20rpx;
+}
+.index_manualsBoxs{
+  width:100%;
+  height:54rpx;
+  overflow: hidden;
+}
+.index_manuals{
+  width:176rpx;
+  height:180rpx;
+  float: left;
+  margin-left:45rpx;
+  margin-top:102rpx;  
+  color:#222;
+  text-align: center;
+  font-size:24rpx;
+}

@@ -1,0 +1,59 @@
+/* pages/index/storecheck/storecheck.wxss */
+page{
+  background: rgba(0,0,0,0.3);
+  -webkit-overflow-scrolling: auto;
+}
+.storecheckbox{
+  width:522rpx;
+  height: 705rpx; 
+  background: white;
+  position: absolute;
+  left:0;
+  top:0;
+  right:0;bottom: 0;
+  margin:auto;
+  border-radius: 10rpx;
+}
+.storetitle{
+  height: 90rpx;
+  border-bottom: 1px solid #DDDDDD;
+  text-align: center;
+  line-height: 90rpx;
+  color:#444444;
+  font-size:30rpx;
+}
+.storewarn{
+  max-height: 80rpx;
+  padding-left:20rpx;
+  color:#EF3F3F;
+  font-size:30rpx;
+  box-sizing: border-box;
+  margin-top:20rpx;
+}
+.storecheck{
+  height: 450rpx;
+  padding-left: 20rpx;
+  /* margin-top:20rpx; */
+  overflow:hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.storelist{
+  height: 55rpx;
+  text-align: left;
+  line-height: 55rpx;
+  color:#202020;
+  font-size:30rpx;
+  margin-top:20rpx;
+  -webkit-overflow-scrolling: touch;
+}
+.storename{
+  width: 80%;
+  float:left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.storeBtn{
+  float: right;
+}

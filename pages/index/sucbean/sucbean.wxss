@@ -1,0 +1,130 @@
+/* pages/sucbean/sucbean.wxss */
+page{
+   /* background: rgba(0,0,0,0.3); */
+   z-index: 10; 
+}
+.sucbean_beanboxs-body{
+  z-index: 20; 
+  background: rgba(0,0,0,0.3);   
+  -webkit-overflow-scrolling: auto;
+  position: absolute;
+  width:100%;
+  height: 100%; 
+  overflow: hidden!important;
+}
+
+.sucbean_beanboxs{
+  height: 565rpx;
+  width: 610rpx;
+  background: white;
+  position: absolute;
+  left:0;top:0;
+  right:0;bottom:0;
+  margin:auto;
+  border-radius: 10rpx;
+   z-index: 30; 
+}
+.sucbean_beanbox{
+  width: 610rpx;
+  height: 300rpx;
+   border-bottom: 1px solid #DDDDDD; 
+  z-index: 40;
+  position: relative;
+  top:185rpx;
+}
+.sucbean_imgBox{
+    width:185rpx;
+    height: 188rpx;
+    position: absolute;
+    left:285rpx;
+    top: 192.5rpx;
+    z-index: 9999;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 5rpx 20rpx 5rpx #b0b0b0;
+}
+.sucbean_imgBox image{
+  width: 185rpx;
+  height: 185rpx;
+
+}
+.sucbean_beanimg image{
+  display: block;
+  width:100%;
+  height: 100%;
+}
+.sucbean_titlebean{
+  width:100%;
+  min-height: 42rpx;
+  position: relative;
+  bottom: 46rpx;
+}
+.sucbean_beanname,.sucbean_beannames{
+  width:100%;
+  height: 42rpx;
+  text-align: center;
+  line-height: 42rpx;
+  font-size:30rpx;
+  color:#202020;
+}
+.sucbean_beannames{
+  overflow: auto;
+}
+.sucbean_colortitle{
+  color:#CF2B22;
+}
+.sucbean_beanprice{
+  color:#CF2B22;
+  max-width: 300rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+   margin:0 auto; 
+}
+.sucbean_pricenum{
+   min-width: 100rpx;
+   margin:0 auto;
+   text-align: center;
+   font-size:40rpx;
+    margin-left:5rpx; 
+    display: block;
+}
+.sucbean_changeNumBox{
+  width: 325rpx;
+  height: 62rpx;
+  margin:60rpx auto;
+}
+.sucbean_addimg,.sucbean_delimg{
+  width:62rpx;
+  height: 62rpx;
+  float: left;
+}
+.sucbean_nums{
+  width:200rpx;float:left;
+  border-bottom: 1px solid #666666;
+  margin-top:10rpx;
+  text-align: center;
+}
+.sucbean_beanBtnBox{
+  width: 100%;
+  height: 80rpx;
+  position: relative;
+  top:185rpx;
+}
+.sucbean_cancleBtn{
+  width:50%;
+  float: left;
+  text-align: center;
+  line-height: 80rpx;
+  color:#868686;
+  font-size:30rpx;
+}
+.sucbean_addIcartBtn{
+  width: 50%;
+  height: 80rpx;
+  float: right;
+  text-align: center;
+  line-height: 80rpx;
+  color:white;
+  font-size:30rpx;
+  background: #D02E2E;
+}

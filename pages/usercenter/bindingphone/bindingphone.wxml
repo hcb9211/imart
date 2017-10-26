@@ -1,0 +1,31 @@
+<!--pages/usercenter/bindingphone/bindingphone.wxml-->
+<include src="/pages/common/common.wxml"/>
+<template name="bindingphone" >
+<view class="bindingphone" wx:if="{{visible}}">
+  <view class="bp-content">
+    <view class='bp-head'>
+      <text>绑定手机号</text>
+    </view>
+    <!-- 手机号 -->
+    <view class='bp-phonenum'>
+      <input value='' maxlength="11" placeholder="请输入手机号" focus="true"  type="number" bindinput="bindPhoneInput"></input> 
+    </view>
+    <!--验证码  -->
+    <view class='bp-verification'>
+      <view class='bp-verification-inp'>
+        <input value='' type="number" maxlength='6' placeholder="请输入验证码" focus="" bindinput="bindCodeInput" ></input>
+      </view>
+      <view class='bp-verification-btn' bindtap="sendcode">{{countdownstr}}</view>
+    </view>
+    <!--推荐码  -->
+    <view class='bp-recommend'>
+        <input type='text' maxlength='11'  bindinput="bindrecommendMobileInput" placeholder='推荐码或推荐人手机号(非必填)' ></input>
+    </view>
+    <!--提交  -->
+    <view class='bp-button'>
+      <view class='bp-cancel' bindtap="back">取消</view>
+      <view class='bp-confirm' bindtap="bindMobileNumber">确定</view>
+    </view>
+  </view>
+</view>
+</template>

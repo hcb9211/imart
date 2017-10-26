@@ -1,0 +1,43 @@
+<include src="/pages/common/common.wxml"/>
+<import src="../../../../tool/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<view class="app">
+  <view class="refund_type refund_li">
+      <text class="refund_title">退款类型</text>
+      <view class="refund_btn">全额退款</view>
+  </view>
+  <view class="refund_price refund_li othertype">
+      <text>退款金额</text>
+      <view class="refund_price_num">¥<view class="refund_prices"><text decode="true">&nbsp;{{price}}</text> </view></view>
+  </view>
+  
+<radio-group name='radio-group' data-val="ly" bindchange="radioChange">
+  <view class="other_refund refund_li">选择退款原因</view>
+  <label>
+    <view class="refund_li ">
+        <text>选择其他方式购买</text>
+        <radio value="选择其他方式购买" checked="{{true}}" color='#D12E2F'/>
+    </view>
+  </label>
+  <label>
+    <view class="refund_li ">
+        <text>商品质量不好</text>
+        <radio value="商品质量不好" checked="{{false}}" color='#D12E2F'/>
+    </view>
+  </label>
+  <label>
+    <view class="refund_li ">
+        <text>买错货物/买多</text>
+        <radio value="买错货物/买多" checked="{{false}}" color='#D12E2F'/>
+    </view>
+  </label>
+  <label>
+    <view class="refund_li othertype">
+        <text>其他原因</text>
+        <radio value="其他原因" checked="{{false}}" color='#D12E2F'/>
+    </view>
+  </label>
+</radio-group>
+  <textarea placeholder="请输入详细原因，您的建议我们会认真听取哦~" data-val="jy" bindinput="radioChange"/>
+  <view class="checkBtn" bindtap="tiaozhuan">提交申请</view>
+</view>

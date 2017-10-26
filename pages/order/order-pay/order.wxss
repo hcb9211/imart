@@ -1,0 +1,109 @@
+@import "../../common/cart.wxss";
+@import "../../usercenter/bindingphone/bindingphone.wxss";
+@font-face {
+	font-family: 'iconfont';
+	src: url(data:font/truetype;charset=utf-8;base64,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) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-iconfont45:before { content: "\e71a"; }
+
+.icon-arrow-l:before { content: "\e63f"; }
+
+.icon-jia:before { content: "\e601"; }
+page{
+ background-color: rgb(246, 246, 246);
+}
+.cart-content{
+  width: 750rpx;
+  overflow-x: hidden
+}
+/* .commodity-soild{} */
+.original-price,.discounts,.yimao-wallet,.cash-coupon,.order-all,.order-pay-choose {
+  background-color: #fff;
+}
+.comm-content-number{
+  position: relative;
+}
+/* 样式覆盖 */
+.order-number{
+  position: absolute;
+  top: 60rpx;
+  right: -120rpx;
+  border: 0rpx;
+  color: #666;
+}
+.order-sum{
+  text-align: right;
+  line-height: 110rpx;
+  font-family: "微软雅黑";
+  font-size: 32rpx;
+  color: #666;
+}
+.order-sum text:first-child{
+  font-size: 20rpx;
+  color: #d02e2e;
+}
+.order-sum text:last-child{
+  margin-right: 20rpx;
+  color: #d02e2e;
+}
+.commodity-soild:last-child{
+  margin-bottom: 0rpx;
+}
+/*后期修改 2017/9/22 */
+.original-price,.discounts,.yimao-wallet,.cash-coupon{
+  height: 50rpx;
+  padding: 20rpx;
+  border-top: 1rpx solid #eeeeee;
+  line-height: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #666666;
+}
+.original-price-content-symbol{
+  color: #444444;
+  font-size: 22rpx;
+}
+.original-price-content-num{
+  color: #444444;
+  font-size: 30rpx;
+}
+.discounts-content-num,.yimao-wallet-content-symbol,.cash-coupon-content-symbol{
+  color: #f15454;
+}
+.yimao-wallet-content-radio{
+  margin-left: 20rpx;
+  position: relative;
+  top: -4rpx;
+  left: 6rpx;
+}
+.icon-arrow-l{
+  position: relative;
+  top: 4rpx;
+  margin-left: 32rpx;
+  font-size:22px;
+  color:#999999;
+}
+.comm-content-price{
+  position: relative;
+  top: -10rpx;
+}
+.order-pay-choose{
+  margin-top: 100rpx;
+}
+/* 修改的样式（HB） */
+.orderlistbox{
+  width:100%;
+  height: 400rpx;
+  margin-bottom:80rpx;
+}

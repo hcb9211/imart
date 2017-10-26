@@ -1,0 +1,107 @@
+/* pages/index/discoupon/discoupon.wxss */
+page{
+  background: #f2f2f2;
+}
+.couponBox{
+  width:calc(100% - 40rpx);
+  min-height: 169rpx;
+  padding:0 20rpx;
+  margin-top:20rpx;
+  overflow-x: hidden!important;
+}
+.couponlist{
+  width:100%;
+  height: 169rpx;
+  position: relative;
+}
+.couponbox{
+  width:710rpx;
+  height: 169rpx;
+  display: block;
+  margin-bottom: 20rpx;
+}
+.priceBox{
+  width:120rpx;
+  height: 169rpx;
+  float: left;
+  position: relative;
+  bottom:169rpx;
+  text-align: center;
+   line-height: 169rpx; 
+  color:#E62321;
+  font-size:60rpx;
+}
+.pricecheck{
+  font-size:26rpx;
+}
+.couponCon{
+  width:390rpx;
+  height: 169rpx;
+  float: left;
+  position: relative;
+  bottom:169rpx;
+  display: flex;
+  flex-direction: column;
+}
+.coupontitle{
+  width:100%;
+  height:70rpx;
+  line-height: 70rpx;
+  font-size:30rpx;
+  color:#222;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.coupontype{
+  width:100%;
+  height: 99rpx;
+  display: flex;
+  flex-direction: column;
+  font-size:24rpx;
+  line-height: 40rpx;
+  padding-top:25rpx;
+  color:#444444;
+}
+.couponBtn{
+  width:155rpx;
+  height: 169rpx;
+  float: right;
+  position: relative;
+  bottom:169rpx;
+  right: 15rpx;
+}
+
+.taga-item{
+  width:130rpx;
+  height: 40rpx;
+  background: #E22A2A; 
+  margin:65rpx auto;
+  border-radius: 20rpx;
+  color:white;
+  font-size:24rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+.getNullcoupon{
+  width:400rpx;
+  height: 370rpx;
+  position: absolute;
+  left:0;top:0;
+  right:0;bottom:0;
+  margin:auto;
+}
+.getNullcoupon image{
+  width:229rpx;
+  height: 229rpx;
+  margin-left: 85.5rpx;
+}
+.getNullcoupon text{
+  width: 100%;
+  height: 140rpx;
+  color:#444;
+  display: block;
+  font-size:30rpx;
+  text-align: center;
+  margin-top:30rpx;
+}

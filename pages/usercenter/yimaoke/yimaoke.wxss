@@ -1,0 +1,49 @@
+/* pages/usercenter/yimaoke/yimaoke.wxss */
+page{
+  background: #fff;
+  font-family: "微软雅黑";
+  font-size: 26rpx;
+  color: #444;
+}
+.yimao{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.yimaoke{
+  width: 70%;
+  height: auto;
+  margin: 250rpx auto;
+  box-sizing: border-box;
+  background: #eee;
+  border-radius:20rpx; 
+}
+.yimaoke-text{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.yimaoke-input{
+  width: 90%;
+  height: 70rpx;
+  margin: 20rpx auto;
+  font-size: 22rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #999999;
+  box-sizing: border-box;
+  border: 1rpx solid #999999;
+}
+.yimaoke-botton{
+  width: 100%;
+  height: 70rpx;
+  margin-top: 60rpx;
+  background-color: #d02e2e;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+}

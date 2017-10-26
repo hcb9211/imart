@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/discoupon/discoupon",
+    "pages/usercenter/index",
+    "pages/index/sucbean/sucbean",
+    "pages/index/manual/manual",
+    "pages/index/storecheck/storecheck",
+    "pages/order/order-pay/order",
+    "pages/order/accomplish-pay/acc",
+    "pages/home/home",
+    "pages/usercenter/Orderdetail/index",
+    "pages/cart/cart",
+    "pages/usercenter/refund/enterrefund/refund",
+    "pages/usercenter/refund/exitrefund/exitrefund",
+    "pages/usercenter/bindingphone/bindingphone",
+    "pages/order/CashCoupon/CashCoupon",
+    "pages/usercenter/yimaoke/yimaoke",
+    "pages/usercenter/functionality/functionality"    
+  ],
+  "window": {
+    "navigationBarTextStyle": "#fff",
+    "navigationBarTitleText": "亿猫GO",
+    "navigationBarBackgroundColor": "#D0302F",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#D0302F",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/icon/home.png",
+        "selectedIconPath": "image/icon/homeactive.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "image/icon/cart.png",
+        "selectedIconPath": "image/icon/cartactive.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/usercenter/index",
+        "iconPath": "image/icon/me.png",
+        "selectedIconPath": "image/icon/meactive.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

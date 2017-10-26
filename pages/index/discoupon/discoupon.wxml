@@ -1,0 +1,27 @@
+<include src="/pages/common/common.wxml"/>
+<view class='couponBox'>
+    <view wx:if="{{couponlist.length != 0}}">
+      <image class='couponbox' src='../../../image/icon/discountBg2.png' wx:for='{{couponlist}}' wx:for-index='index' wx:for-item='item' >
+          <view class='priceBox'><text class='pricecheck'>¥</text><text class='pricenum'>{{item.value}}</text></view>
+          <view class='couponCon'>
+              <view class='coupontitle'>{{item.couponName}}</view>
+              <view class='coupontype'>
+                  <view>满{{item.beginPrice}}元可用</view>
+                  <view wx:if='{{item.storeName}}'>仅限{{item.storeName}}使用</view>
+                  <view wx:else>亿猫通用券</view>
+              </view>
+          </view>
+          <view class='couponBtn' id='{{index}}' catchtap='getCoupon'>
+              <block ><!--wx:if='{{item.isReceive == 1}}' -->
+                <view class="taga-item" style='background:{{item.background}}'>
+                      {{item.coupontext}}
+                  </view>
+            </block>
+          </view>
+      </image>
+    </view>
+     <view wx:else class='getNullcoupon'>
+          <image src='../../../image/icon/couponnull.png'></image>
+          <text>啊哦~当前没有可领取的优惠券下次再来吧</text>
+     </view> 
+</view> 

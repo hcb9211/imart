@@ -1,0 +1,16 @@
+<!--pages/usercenter/yimaoke/yimaoke.wxml-->
+<include src="/pages/common/common.wxml"/> 
+<template name="yimaoke"> 
+  <view class='yimao' wx:if="{{visible}}">
+    <view class='yimaoke'> 
+      <view class='yimaoke-text'>绑定亿猫客</view>
+      <input class='yimaoke-input' maxlength='11' placeholder='推荐人手机号或推荐码' color="#999" bindinput="yimaokeinit" ></input>
+      <canvas style="width: 90px; height: 90px; margin: 30rpx auto;" canvas-id="qrcode"></canvas>
+      <view class='yimaoke-imagetext'>扫码绑定亿猫客</view>
+      <view class='yimaoke-botton'>
+        <view class='yimaoke-cancel' bindtap='cancel'>取消</view>
+        <view class='yimaoke-confirm' bindtap='updata'>提交</view>
+      </view>
+    </view>
+  </view> 
+</template>

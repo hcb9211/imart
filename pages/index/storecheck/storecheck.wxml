@@ -1,0 +1,57 @@
+<view class='storecheckbox'>
+    <view class='storetitle'>请选择门店</view>
+    <view class='storewarn'>门店选错可能造成您的经济损失，且不能正常出店哦~</view>
+    <view class='storecheck'>
+        <radio-group name='radio-group'>
+            <label>
+                <view class='storelist'>
+                    <view class='storename'>华润苏果中山北路店</view>
+                    <radio class='storeBtn' value="value" checked="{{true}}" color='#D12E2F'></radio>
+                </view>
+            </label>
+            <label>
+                <view class='storelist'>
+                    <view class='storename'>华润苏果中山北路店</view>
+                    <radio class='storeBtn' value="value" checked="{{false}}" color='#D12E2F'></radio>
+                </view>
+            </label>
+            <label>
+                <view class='storelist'>
+                    <view class='storename'>华润苏果中山北路店</view>
+                    <radio class='storeBtn' value="value" checked="{{false}}" color='#D12E2F'></radio>
+                </view>
+            </label>
+            <label>
+                <view class='storelist'>
+                    <view class='storename'>华润苏果中山北路店</view>
+                    <radio class='storeBtn' value="value" checked="{{false}}" color='#D12E2F'></radio>
+                </view> 
+            </label>
+            <label>
+                <view class='storelist'>
+                    <view class='storename'>华润苏果中山北路店</view>
+                    <radio class='storeBtn' value="value" checked="{{false}}" color='#D12E2F'></radio>
+                </view>
+            </label>
+            <label>
+                <view class='storelist'>
+                    <view class='storename'>华润苏果中山北路店</view>
+                    <radio class='storeBtn' value="value" checked="{{false}}" color='#D12E2F'></radio>
+                </view>
+            </label>
+            <label>
+                <view class='storelist'>
+                    <view class='storename'>华润苏果中山北路店</view>
+                    <radio class='storeBtn' value="value" checked="{{false}}" color='#D12E2F'></radio>
+                </view>
+            </label>
+            <label>
+                <view class='storelist'>
+                    <view class='storename'>华润苏果中山北路店</view>
+                    <radio class='storeBtn' value="value" checked="{{false}}" color='#D12E2F'></radio>
+                </view>
+            </label>
+        </radio-group>
+
+    </view>
+</view>

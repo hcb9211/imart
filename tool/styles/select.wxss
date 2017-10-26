@@ -1,0 +1,65 @@
+/* pages/index/storecheck/storecheck.wxss */
+.select-storecheckback{
+   z-index: 5000;
+  background: rgba(0,0,0,0.3);
+  -webkit-overflow-scrolling: auto;
+  position: absolute;
+  width:100%;
+  height: 100%; 
+}
+
+.select-storecheckbox{
+  z-index: 5000;
+  width:522rpx;
+  height: 705rpx; 
+  background: white;
+  position: absolute;
+  left:0;
+  top:0;
+  right:0;bottom: 0;
+  margin:auto;
+  border-radius: 10rpx;
+}
+.select-storetitle{
+  height: 90rpx;
+  border-bottom: 1px solid #DDDDDD;
+  text-align: center;
+  line-height: 90rpx;
+  color:#444444;
+  font-size:30rpx;
+}
+.select-storewarn{
+  max-height: 100rpx;
+  padding-left:10rpx;
+  color:#EF3F3F;
+  font-size:30rpx;
+  box-sizing: border-box;
+  margin-top:20rpx;
+}
+.select-storecheck{
+  height: 450rpx;
+  padding-left: 20rpx;
+  margin-top:20rpx;
+  overflow:hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.select-storelist{
+  height: 55rpx;
+  text-align: left;
+  line-height: 55rpx;
+  color:#202020;
+  font-size:30rpx;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20rpx;
+}
+.select-storename{
+  width:80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  float:left;
+}
+.select-storeBtn{
+  float: right;
+}

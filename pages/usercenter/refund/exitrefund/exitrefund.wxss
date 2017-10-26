@@ -1,0 +1,131 @@
+/* pages/usercenter/refund/exitrefund/exitrefund.wxss */
+.app{
+  width:100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+page{
+  background: #F6F6F6;
+}
+.icon_exitrefundBox{
+  width:100%;
+  height: 570rpx;
+  background: white;
+}
+.icon_exitrefund{
+  width:100%;
+  height: 240rpx;
+  padding-top:60rpx;
+  box-sizing: border-box;
+}
+.exitrefundimgbox{
+  width:140rpx;
+  height: 130rpx;
+  margin:0 auto;
+}
+.imgbox{
+  width:100%;
+}
+.icon_refundimg{
+  width:70rpx;
+  height: 60rpx;
+  margin-left: 35rpx;
+}
+.titles{
+  color:#0779FF;
+  font-size:30rpx;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+.text_tishi{
+  width: 100%;
+  height: 30rpx;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  display: block;
+}
+.barCode{
+  width:100%;
+  height: 220rpx;
+  margin-top:30rpx;
+}
+.barCode_icon{
+  width:513rpx;
+  height: 168rpx;
+  margin:0 auto;
+  display: block;
+}
+.barCode_num{
+  display: block;
+  width:100%;
+  height:30rpx;
+  text-align: center;
+  line-height: 30rpx;
+  font-size:28rpx;
+  margin-top:20rpx;
+}
+.store_show{
+  width:100%;
+  height: 80rpx;
+  padding-left: 20rpx;
+} 
+.store_show image{
+  width:39rpx;height: 39rpx;
+  float: left;
+  margin-top:20.5rpx;
+}
+.store_show text{
+  display: block;
+  width:50%;
+  height:100%;
+  line-height: 80rpx;
+  font-size:30rpx;
+  color:#404040;
+  margin-left:10rpx;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.orderDetail{
+  width:100%;
+  height: 243rpx;
+  background: white;
+  padding-left:20rpx;
+  padding-top:5rpx;
+}
+.orderlist{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  color:#404040;
+  font-size:30rpx;
+  margin-top:20rpx;
+}
+.colorred{
+  color:#CF2D2B;
+  font-size:34rpx;
+}
+.toast_refund{
+  width: 100%;height: 200rpx;
+  line-height: 50rpx;
+  padding-left:20rpx;
+  box-sizing: border-box;
+  margin-top:40rpx;
+}
+.toast_refund image{
+  width:35rpx;height: 35rpx;
+  float: left;
+  margin-top:7rpx;
+  display: block;
+}
+.toast_refund text{
+  display: block;
+  float: left;
+  margin-left:10rpx;
+  font-size:30rpx;
+  color:#666666;
+  width:calc(100% - 55rpx);
+}

@@ -1,0 +1,61 @@
+<include src="/pages/common/common.wxml"/>
+<import src="/pages/index/sucbean/sucbean.wxml"/>
+<import src="/pages/index/manual/manual.wxml"/>
+<import src="/tool/refresher/refresher.wxml"/>
+
+<template is="sucbean" data="{{ ...good }}"/>
+<template is="manual" data="{{ ...manual }}"/>
+
+
+<view class="index_app">
+  <!-- 轮播 -->
+<view class="index_container">
+  <view class="index_page-body">
+    <view class="index_page-section index_page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+         <block wx:for="{{background}}" wx:key="*this"> 
+          <swiper-item>
+              <!-- <view class="swiper-item {{item}}"></view> -->
+              <image src="{{item}}" class="index_slide-image"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    </view>
+ </view>
+<!-- 定位门店 -->
+<view class="index_storePos">
+  <view class="index_iconposbox">
+      <image src="../../image/icon/dingwei.png" class="index_iconpos"></image>
+  </view>
+  <text class="index_postext">您当前在</text>
+  <view class="index_storenamebox">
+      <text class="index_storename" bindtap="masktap">{{storename}}</text>
+      <view class="index_checkbtn" bindtap="masktap">
+          <image src="../../image/icon/check.png"></image>
+      </view>
+  </view>
+</view>
+<!-- 扫码盒子 -->
+<view class="index_couponbox">
+  <view class="index_coupons">
+    <image src="../../image/icon/coupon.png" class="index_coupon" bindtap="sucbean"></image>
+    <text class="index_coupontext">优惠券</text>
+  </view>
+  <view class="index_scancodes">
+    <image src="../../image/icon/scan.png" class="index_scancode" bindtap="scan"></image>
+    <text>商品扫码</text>
+  </view>
+  <view class="index_manuals">
+    <view class="index_manualbox">
+      <image src="../../image/icon/manual.png" class="index_manualscancode" bindtap="manualpage"></image>
+    </view>
+    <view class='index_manualsBoxs'>
+        <text class="index_manualtext">手动输入条形码</text>
+    </view>
+  </view>
+  <!-- <view class="coupon"></view> -->
+  <!-- <view class="scancode"></view> -->
+  <!-- <view class="manualscancode"></view> -->
+</view>
+</view>

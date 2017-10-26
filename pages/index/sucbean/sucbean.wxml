@@ -1,0 +1,30 @@
+<template name="sucbean">    
+ <view class='sucbean_beanboxs-body' wx:if="{{ visible }}"><!--wx:if="{{ visible }}"-->
+ <view class='sucbean_imgBox'>
+         <image class='sucbean_beanimg' src='{{productImage}}'></image><!-- ../../../image/icon/4.png  {{productImage}}-->  
+   </view>
+    <view class='sucbean_beanboxs'>
+          
+          <view class='sucbean_beanbox'>
+                <view class='sucbean_titlebean'>
+                    <view class='sucbean_beanname'>{{commodityName}}</view>
+                    <view class='sucbean_beanname sucbean_colortitle'>{{promType}}</view>
+                </view>
+                <view class='sucbean_beanprice'>
+                    <!-- <text class='pricemask'>¥</text> -->
+                    <text class='sucbean_pricenum'>¥{{nowPrice}}</text> 
+                </view>
+                <!-- 加减数量 -->
+                <view class='sucbean_changeNumBox'>
+                    <image src='/image/icon/dels.png' class='sucbean_delimg' bindtap="deccount"></image>
+                    <input type='number' class='sucbean_nums' bindinput="shopCountinput" value="{{shopCount}}"/>
+                    <image src='/image/icon/add.png' class='sucbean_addimg' bindtap="addcount"></image>
+                </view>
+          </view>
+          <view class='sucbean_beanBtnBox'>
+              <view class='sucbean_cancleBtn' bindtap="hide">取消</view>
+              <view class='sucbean_addIcartBtn' bindtap="addcart">加入购物车</view>
+          </view>
+    </view>
+  </view>
+</template>    

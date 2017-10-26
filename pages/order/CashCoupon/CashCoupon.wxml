@@ -1,0 +1,67 @@
+<!--pages/order/CashCoupon/CashCoupon.wxml-->
+<include src="/pages/common/common.wxml"/>
+<import src="/tool/refresher/refresher.wxml"/>
+<view class="CashCoupon" wx:if="{{couponlist.length != 0}}">
+      <!--内容  -->
+      <block wx:for="{{ couponlist }}" wx:key="" wx:for-item="bean" wx:for-index="index">
+        <view class='CashCoupon-list' wx:if="{{bean.available == 1}}" data-index="{{index}}" bindtap="select">
+        <view class='CashCoupon-information'>
+          <view class='CashCoupon-content'>
+            <view class='CashCoupon-content-headline'>{{bean.couponName}}</view>
+            <view class='CashCoupon-content-intro'>
+              <view class='CashCoupon-content-time'>有效期：{{bean.dateEnd}} </view>
+              <view class='CashCoupon-content-regulation' hidden="true">仅限苏果中山北路店使用</view>
+            </view>
+          </view>
+          <!--金额  -->
+          <view class='CashCoupon-money'>
+            <view class='CashCoupon-money-choose'>
+              <image src='/image/yhqxz.png' wx:if="{{bean.visible}}"></image>  
+            </view>
+            <view class='CashCoupon-money-pic'>
+              <text>￥</text><text>{{bean.value}}</text>
+            </view>
+            <view class='CashCoupon-money-tiaojian'>{{bean.useNotice}}</view>
+          </view>
+        </view>
+          </view>
+          <view wx:else>
+              <!-- 不可用优惠券-->
+            <view class='CashCoupon-list'>
+              <view class='CashCoupon-information'>
+                <!--内容  -->
+                <view class='CashCoupon-content'>
+                  <view class='CashCoupon-content-headline'  style='color:#999'>{{bean.couponName}}</view>
+                  <view class='CashCoupon-content-intro'>
+                    <view class='CashCoupon-content-time' style='color:#999'>有效期：{{bean.dateEnd}} </view>
+                    <view class='CashCoupon-content-regulation' style='color:#999' hidden="true">仅限苏果中山北路店使用</view>
+                  </view>
+                </view>
+                <!--金额  -->
+                <view class='CashCoupon-money'>
+                  <view class='CashCoupon-money-choose'>
+                    <!-- <image src='/image/yhqxz.png'></image>   -->
+                  </view>
+                  <view class='CashCoupon-money-pic' style='color:#999'>
+                    <text>￥</text><text>{{bean.value}}</text>
+                  </view>
+                  <view class='CashCoupon-money-tiaojian' style='color:#999'>{{bean.useNotice}}</view>
+                </view>
+              </view>
+              <!--是否可用  -->
+              <view class='CashCoupon-employ' hidden="true">
+                <view class='CashCoupon-employ-headline'>不可用原因</view>
+                <view class='CashCoupon-employ-reason'>消费未满10元</view>
+              </view>
+            </view>
+          </view>
+      </block>
+      
+    <!--color 颜色******************************  -->
+
+</view>
+
+  <view wx:else class='getNullcoupon'>
+          <image src='/image/icon/couponnull.png'></image>
+          <text>啊哦~当前没有可以使用的优惠券</text>
+     </view> 

@@ -1,0 +1,169 @@
+ <!--pages/usercenter/index.wxml-->
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<include src="/pages/common/common.wxml"/>
+ <view>
+    <view class='user-head'>
+      <view class='user-head-portrait' bindtap='functionality'>
+        <view class='head-img'>
+         <image src="{{user.headPortrait}}"></image> 
+        </view>
+        <view class='head-name' bindtap='cc'>{{user.nickName}}</view>
+      </view>
+      <view class='user-hend-option'>
+        <view wx:for="{{navigation}}" wx:key="navigation" class='{{ item.whit ? "navigation" : "navigationborder"}}' wx:for-index = "index" data-classify='{{index}}'  bindtap='classify' >
+          <view>{{item.value}}</view>
+          <view>{{item.num}}</view>
+        </view>
+      </view>
+    </view>
+    <!--没有订单  -->
+    <view class='user-no' wx:if="{{classif==0 && all.length == 0 }}">
+      <image src='../../image/user/gwjl.png'></image>
+      <view>啊哦~您7日内没有此类订单</view>
+    </view>
+    <view class='user-no' wx:elif="{{classif==1 && pay.length == 0 }}">
+      <image src='../../image/user/gwjl.png'></image>
+      <view>啊哦~您7日内没有此类订单</view>
+    </view>
+    <view class='user-no' wx:elif="{{classif==2 && recheck.length == 0 }}">
+      <image src='../../image/user/gwjl.png'></image>
+      <view>啊哦~您7日内没有此类订单</view>
+    </view>
+    <view class='user-no' wx:elif="{{classif==3 && achieve.length == 0 }}">
+      <image src='../../image/user/gwjl.png'></image>
+      <view>啊哦~您7日内没有此类订单</view>
+    </view>
+    <!--有订单  -->
+    <view class='user-content'>
+      <!--全部订单  -->
+      <view class='user-list' hidden='{{navigation[0].whit}}' wx:for="{{all}}" wx:key="all" wx:for-index="index" data-allindex='index'>
+        <view class='user-store'>
+          <image src='../../image/user/dianpu.png'></image>
+          <text class='user-store-name'>{{item.storeName}}</text>
+          <text class='state right' wx:if="{{item.status == 0}}">支付成功，待复核</text>
+          <text class='state right' wx:elif="{{item.status == 1}}">支付失败</text>
+          <text class='state right' wx:elif="{{item.status == 2}}">未支付</text>
+          <text class='state right' wx:elif="{{item.status == 3}}">支付成功,已复核</text>
+          <text class='state right' wx:elif="{{item.status == 4}}">退款中,待复核</text>
+          <text class='state right' wx:elif="{{item.status == 5}}">退款中,已复核</text>
+          <text class='state right' wx:elif="{{item.status == 6}}">退款成功</text>
+          <text class='state right' wx:elif="{{item.status == 7}}">退款失败</text>
+        </view>
+        <view class='user-commodity' id="{{item.orderNo}}" catchtap='tiaozhaun'>
+          <view class='comm-img'>
+             <image src='{{item.commodityList[0].picture}}'></image> 
+          </view>
+          <view class='comm-text'>
+            <view class='comm-text-name'>{{item.commodityList[0].commodityName}}</view>
+            <view class='comm-text-num'>
+              <text class='comm-text-num-pic'>￥<text>{{item.commodityList[0].promotePrice}}</text> <text class='comm-text-num-picold'>￥ <text>{{item.commodityList[0].price}}</text> </text> </text>
+              <text class='comm-text-num-piece right'>x{{item.commodityList[0].count}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='user-summation'>
+          <text class='user-summation-num'>共 {{item.productCount}} 件商品 <text class='user-summation-pic  right'>￥<text>{{item.amount}}</text></text></text>
+        </view>
+          <view class='user-ord' wx:if="{{item.status=='2'}}">
+           <!-- <text class='user-ord-del'wx:if="{{item.status==1||item.status==3||item.status==6||item.status==7}}" data-jsdh='{{item.orderNo}}' bindtap="shanchu">删除订单</text>  -->
+          <text class='user-ord-cancel' data-jsdh='{{item.orderNo}}' data-index='{{index}}' bindtap='shanchu'>取消订单</text>
+          <text class='user-ord-payment' data-jsdh='{{item.orderNo}}' data-md="{{item.storeId}}" data-je="{{item.needPayAmount}}" data-index="{{index}}" bindtap="pay">支付</text>
+          <!-- <text class='user-ord-recheck' wx:if="{{item.status==0||item.status==4}}">复核</text> -->
+           <!-- <text class='user-ord-evaluate' wx:if="{{item.status==3&&item.isNewRecord==false}}">评价得15分</text>  -->
+        </view> 
+        <view class='user-ord' wx:if="{{item.status=='0'}}">
+           <!-- <text class='user-ord-del'wx:if="{{item.status==1||item.status==3||item.status==6||item.status==7}}" data-jsdh='{{item.orderNo}}' bindtap="shanchu">删除订单</text>  -->
+          <text class='user-ord-cancel' data-orderNo='{{item.orderNo}}' data-index='{{index}}' bindtap='opendoor'>扫码开门</text>
+          
+        </view>   
+      </view>
+      <!-- 待付款 -->
+      <view class='user-list' hidden='{{navigation[1].whit}}' wx:for="{{pay}}" wx:key="pay" wx:for-index="index">
+        <view class='user-store'>
+          <image src='../../image/user/dianpu.png'></image>
+          <text class='user-store-name'>{{item.storeName}}</text>
+          <text class='state right'>待付款</text>
+        </view>
+        <view class='user-commodity'  id="{{item.orderNo}}" catchtap='tiaozhaun'>
+          <view class='comm-img'>
+            <image src='{{item.commodityList[0].picture}}'></image>
+          </view>
+          <view class='comm-text'>
+            <view class='comm-text-name'>{{item.commodityList[0].commodityName}}</view>
+            <view class='comm-text-num'>
+              <text class='comm-text-num-pic'>￥<text>{{item.commodityList[0].promotePrice}}</text> <text class='comm-text-num-picold'>￥ <text>{{item.commodityList[0].price}}</text> </text> </text>
+              <text class='comm-text-num-piece right'>x{{item.commodityList[0].count}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='user-summation'>
+          <text class='user-summation-num'>共 {{item.productCount}} 件商品 <text class='user-summation-pic  right'>￥<text>{{item.amount}}</text></text></text>
+        </view>
+         <view class='user-ord'>
+            <text class='user-ord-cancel' data-jsdh='{{item.orderNo}}'  data-index='{{index}}'  bindtap="shanchu">取消订单</text> 
+          <text class='user-ord-payment' data-jsdh='{{item.orderNo}}' data-md="{{item.storeId}}" data-je="{{item.needPayAmount}}" data-index="{{index}}" bindtap="pay">支付</text> 
+        </view> 
+      </view>
+      <!--待复核  -->
+      <view class='user-list' hidden='{{navigation[2].whit}}' wx:for="{{recheck}}" wx:key="recheck" wx:for-index="index">
+        <view class='user-store'>
+          <image src='../../image/user/dianpu.png'></image>
+          <text class='user-store-name'>{{item.storeName}}</text>
+          <text class='state right' wx:if="{{item.status == 0}}">支付成功,待复核</text>
+          <text class='state right' wx:else >退款中,待复核</text>
+        </view>
+        <view class='user-commodity'  id="{{item.orderNo}}" catchtap='tiaozhaun'>
+          <view class='comm-img'>
+            <image src='{{item.commodityList[0].picture}}'></image>
+          </view>
+          <view class='comm-text'>
+            <view class='comm-text-name'>{{item.commodityList[0].commodityName}}</view>
+            <view class='comm-text-num'>
+              <text class='comm-text-num-pic'>￥<text>{{item.commodityList[0].promotePrice}}</text> <text class='comm-text-num-picold'>￥ <text>{{item.commodityList[0].price}}</text> </text> </text>
+              <text class='comm-text-num-piece right'>x{{item.commodityList[0].count}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='user-summation'>
+          <text class='user-summation-num'>共 {{item.productCount}} 件商品 <text class='user-summation-pic  right'>￥<text>{{item.amount}}</text></text></text>
+        </view>
+        <!-- <view class='user-ord'>
+          <text class='user-ord-recheck'>复核</text>
+        </view> -->
+      </view>
+      <!-- 已完成  -->
+      <view class='user-list' hidden='{{navigation[3].whit}}'  wx:for="{{achieve}}" wx:key="achieve" wx:for-index="index">
+        <view class='user-store'>
+          <image src='../../image/user/dianpu.png'></image>
+          <text class='user-store-name'>{{item.storeName}}</text>
+          <text class='state right'>已完成 </text>
+        </view>
+        <view class='user-commodity'  id="{{item.orderNo}}" catchtap='tiaozhaun'>
+          <view class='comm-img'>
+            <image src='{{item.commodityList[0].picture}}'></image>
+          </view>
+          <view class='comm-text'>
+            <view class='comm-text-name'>{{item.commodityList[0].commodityName}}</view>
+            <view class='comm-text-num'>
+              <text class='comm-text-num-pic'>￥<text>{{item.commodityList[0].promotePrice}}</text> <text class='comm-text-num-picold'>￥ <text>{{item.commodityList[0].price}}</text> </text> </text>
+              <text class='comm-text-num-piece right'>x{{item.commodityList[0].count}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='user-summation'>
+          <text class='user-summation-num'>共 {{item.productCount}} 件商品 <text class='user-summation-pic  right'>￥<text>{{item.amount}}</text></text></text>
+        </view>
+        <!-- <view class='user-ord'> -->
+          <!-- <text class='user-ord-del' >删除订单</text> -->
+          <!-- <text class='user-ord-evaluate'>评价得15分</text> -->
+        <!-- </view> -->
+      </view>
+    </view>
+    <!-- 提示***************** -->
+    <view class='user-reminder'>
+      <view wx:if="{{navigation[0].leng < 8}}" >查看更多订单请下载“亿猫”APP</view>
+      <view wx:elif="{{navigation[1].leng < 8}}">查看更多订单请下载“亿猫”APP</view>
+      <view wx:elif="{{navigation[2].leng < 8}}">查看更多订单请下载“亿猫”APP</view>
+      <view wx:elif="{{navigation[3].leng < 8}}">查看更多订单请下载“亿猫”APP</view>
+    </view>
+</view>

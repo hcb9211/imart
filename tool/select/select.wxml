@@ -1,0 +1,23 @@
+<template name="select">
+ <view class='select-storecheckback' wx:if="{{ visible }}"></view>
+    <view class='select-storecheckbox' wx:if="{{ visible }}">
+    <view class='select-storetitle' wx:if="{{ visible }}">{{title}}</view>
+    <view class='select-storewarn' wx:if="{{ visible }}">{{content}}</view>
+    <view class='select-storecheck' wx:if="{{ visible }}">
+        <radio-group name='radio-group'>
+         <block wx:for="{{ list }}" wx:key="" wx:for-index="index">
+            <label bindtap="{{ buttonTapped }}" data-index="{{index}}">
+                <view class='select-storelist' >
+                    <view class='select-storename'>
+                        {{item.name}}
+                    </view>
+                    <radio class='select-storeBtn' value="value" checked="{{false}}" color='#D12E2F'></radio>
+                </view>
+            </label>
+            </block>
+        </radio-group>
+
+    </view>
+</view>
+</template>
+

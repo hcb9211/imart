@@ -1,0 +1,68 @@
+<!--pages/usercenter/ddxq/ddxq.wxml-->
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<include src="/pages/common/common.wxml"/>
+<view class='ddxq'>
+  <view class='ddxq-store'>
+    <image src='../../../image/user/dianpu.png'></image>
+    <text class='ddxq-store-name'>{{init.storeName}}</text>
+    <text class='ddxq-store-scc right' wx:if="{{init.status == '0'}}">支付成功，待复核</text>
+    <text class='ddxq-store-scc right'wx:elif="{{init.status == '1'}}">支付失败</text>
+    <text class='ddxq-store-scc right'wx:elif="{{init.status == '2'}}">未支付</text>
+    <text class='ddxq-store-scc right'wx:elif="{{init.status == '3'}}">支付成功，已复核</text>
+    <text class='ddxq-store-scc right'wx:elif="{{init.status == '4'}}">退款中, 待复核</text>
+    <text class='ddxq-store-scc right'wx:elif="{{init.status == '5'}}">退款中,已复核</text>
+    <text class='ddxq-store-scc right' wx:elif="{{init.status == '6'}}">退款成功</text>
+    <text class='ddxq-store-scc right' wx:elif="{{init.status == '7'}}">退款失败</text>
+  </view>
+  <view class='ddxq-commodity'>
+
+    <view class='ddxq-list' wx:for="{{init.commodityList}}" wx:key="">
+      <view class='ddxq-comm-img'>
+        <image src='{{item.picture}}'></image>
+      </view> 
+      <view class='ddxq-comm-text'>
+        <view class='ddxq-comm-name'>{{item.commodityName}}</view>
+        <view class='ddxq-comm-num'>
+          <text class='ddxq-comm-price'>￥<text>{{item.price}}</text></text>
+          <text class='ddxq-comm-number right'>x{{item.count}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='ddxq-total'>
+    <text>商品总价：</text>
+    <text class='ddxq-total-price'>￥<text>{{init.rental}}</text></text>
+  </view>
+  <view class='ddxq-discounts'>
+    <text>活动优惠：</text>
+    <text class='ddxq-discounts-price'>￥<text>{{init.promoteAmount}}</text></text>
+  </view>
+  <view class='ddxq-payment'>
+    <text>支付金额：</text>
+    <text class='ddxq-payment-price' wx:if="{{init.status== '2'}}">￥<text>{{init.needPayAmount}}</text></text>
+    <text class='ddxq-payment-price' wx:else>￥<text>{{init.amount}}</text></text>
+  </view>
+  <view class="ddxq-erweima" wx:if="{{init.status==4||init.status==0}}">
+    <view style='margin-top: 20rpx;text-align: center;font-size: 30rpx;color: #666666'>请将此条形码出示给超市工作人员，完成复核</view>
+    <canvas style="width: 200px; height: 80px; margin: 10rpx auto;" canvas-id="barcode"></canvas>
+    <view style='text-align: center;font-size: 30rpx;color: #666666'>{{init.orderNo}}</view>
+  </view>
+  <view class='ddxq-message '>
+    <view>订单号：{{init.orderNo}}</view>
+    <view>创建时间：{{init.createDate}}</view>
+    <view>支付时间：{{init.payDate}}</view>
+  </view>
+  <view class='ddxq-operation' wx:if="{{init.status==1||init.status==2||init.status==3}}">
+    <text wx:if="{{init.status==2}}" data-jsdh='{{init.orderNo}}' bindtap='shanchu'>取消订单</text>
+    <!-- <text wx:elif="{{init.status==2}}">删除订单</text>
+    <text wx:elif="{{init.status==3}}">删除订单</text>
+    <text wx:elif="{{init.status==6}}">删除订单</text>
+    <text wx:elif="{{init.status==7}}">删除订单</text> -->
+    <!-- <text wx:if="{{init.status==1}}" data-order="{{init.orderNo}}" data-price="{{init.amount}}" bindtap='tuikuan'>申请退款</text> -->
+    <text wx:if="{{init.status==3}}" data-order="{{init.orderNo}}" data-price="{{init.amount}}" bindtap='tuikuan'>申请退款</text>
+    <!-- <text wx:if='init.status==3 && init.isNewRecord == false'>已评价</text> -->
+    <!-- <text wx:if="{{init.status==3 && init.isNewRecord == true}}">评价得15积分</text> -->
+    <text wx:elif="{{init.status==2}}" bindtap='pay'>支付</text>
+    <!-- <text wx:if="{{init.status==4 || init.status==0}}" bindtap="showToastText">复核</text> -->
+  </view>
+</view>

@@ -1,0 +1,20 @@
+/* pages/usercenter/index.wxss */
+@import "../common/usercenter.wxss";
+.scrollview{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.user-reminder{
+  margin-top: 40rpx;
+  width: 100%;
+  height: 70rpx;
+  overflow: hidden;
+}
+.user-reminder view{
+  width: 100%;
+  height: 70rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fd2e2e;
+}

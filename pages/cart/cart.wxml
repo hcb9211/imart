@@ -1,0 +1,61 @@
+<!--pages/cart/cart.wxml-->
+<include src="/pages/common/common.wxml"/>
+<import src="/tool/refresher/refresher.wxml"/>
+
+<view  style="position: absolute;width: 100%; height: 100%; {{ $wux.refresher.style }}" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" >
+<template is="refresher" data="{{ ...$wux.refresher }}"/>
+
+<view class="cart-text" wx:if="{{goods.goodsList.length == 0}}">
+  <image src="../../image/cart-cart.png" ></image>
+  <text>\n您的购物车空空如也！去添加宝贝吧</text>
+</view>
+
+<view class="cart-content" wx:if="{{goods.goodsList.length > 0}}">
+  <view class="cart-commodity">
+    <checkbox-group class="commodity-group" >
+      <view class="commodity-soild" wx:for="{{goods.goodsList}}" wx:key="" wx:for-index="index" style=' border-top: 1rpx solid #eee;'>
+          <label>
+            <view class="comm-neirong" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}};">
+              <view class="comm-img">
+                <image src="{{item.productImage}}"></image>
+              </view>
+               <view class="comm-content">
+                <view class="comm-content-name">
+                  {{item.commodityName}}
+                </view>
+                <view class="comm-content-number">
+                  <text class="comm-content-price">
+                     ￥<text class="comm-content-price-num">{{item.nowPrice}}</text> 
+                  </text>
+                    <view class="comm-content-quantity">
+                      <text class="comm-quantity-jian iconfont icon-jia"  catchtap="decChange" data-index="{{index}}"></text>
+                    <text class="comm-quantity-num">{{item.shopCount}}</text>
+                    <text class="comm-quantity-jia iconfont icon-iconfont45"  catchtap="addChange" data-index="{{index}}"></text>  
+                  </view>  
+                </view>
+              </view> 
+            </view>
+            <view class="comm-del" bindtap="delGoods" data-index="{{index}}">
+              <image src="../../image/delb.png"></image>
+            </view> 
+          </label>
+      </view>
+    </checkbox-group>
+  </view>
+</view>
+</view>
+
+
+<view class="cart-order"  wx:if="goods.goodsList.length > 0">
+    <view class="order-sum">
+      <view class="cart-order-total">
+          合计：<text>￥</text><text>{{goods.totalPromPrice}}</text>
+      </view>
+      <view class="cart-order-money">
+          总额：￥{{goods.totalPrice}}<text>优惠：￥{{goods.coupon}}</text>
+      </view>
+    </view>
+    <view class="order-account" bindtap="order">
+        结算({{goods.totalCount}})
+    </view>
+</view>

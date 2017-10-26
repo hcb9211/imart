@@ -1,0 +1,105 @@
+@import '../../common/lib/common.wxss';
+page{
+  overflow: hidden!important;
+}
+.viewbox{
+  overflow:hidden!important;position:absolute;width:100%;height:100%;z-index:1000;background:#F6F6F6;
+}
+.storename{
+  width:100%;
+  height:40rpx;
+  margin-top:30rpx;
+  display: flex;
+}
+.backBtn{
+  width:50rpx;
+  height: 100%;
+  text-align: center;
+  line-height: 40rpx;
+}
+.backBtn image{
+  width:18rpx;
+  height: 32rpx;
+}
+.storebox{
+  width:50%;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 40rpx;
+  color:#444;
+  font-size:30rpx;
+}
+.storetextbox{
+  width:85%;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 40rpx;
+}
+.iconstore{
+  width:10%;
+  float: right;
+}
+.checkbtn{
+  width:44rpx;
+  height:38rpx;
+  float:right;
+}
+.textscan{
+  width:100%;
+  height:40rpx;
+  margin-top:90rpx;
+  text-align: center;
+  line-height: 40rpx;
+  color:#444;
+  font-size:34rpx;
+}
+.inputscan{
+  width:100%;
+  height:40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  color:#222;
+  font-size:42rpx;
+  margin-top:50rpx;
+}
+.inputscan:placeholder{
+  text-align: center;
+}
+.gridbox{
+  width: 515rpx;
+  height: 660rpx;
+  margin: 45rpx auto;
+}
+.col-4{
+  width: 130rpx;height: 130rpx;
+  text-align: center;
+  line-height: 130rpx;
+  border-radius: 50%;
+  border:1px solid #6F6F6F;
+  color:#555555;
+  margin-bottom:40rpx;
+}
+.orangecol{
+  color:#EA7400;
+  border:1px solid #EA7400;
+}
+.orangecol:active{
+  background: #EAEAEA;
+}
+.greencol{
+  color:#0BB417;
+  border:1px solid #0BB417;
+}
+.greencol:active{
+  background: #0BB417;
+}
+.col-4:active{
+  background:#EAEAEA;
+}
+.marginNull{
+  margin-bottom: 0;
+}

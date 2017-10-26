@@ -1,0 +1,49 @@
+<!-- 定位门店 -->
+<template name="manual">
+<view wx:if="{{ visible }}" class='viewbox'>
+<view class="storename" >
+  <view class='backBtn' bindtap='backBtn'>
+        <image src='/image/icon/back.png'></image>
+  </view>
+  <view class="storebox">
+    <view class="storetextbox">
+      <text class="storetext">{{storename}}</text>
+    </view>
+    <view class="iconstore">
+      <image src="../../../image/icon/check.png" class="checkbtn"></image>
+    </view>
+  </view>
+</view>
+<!-- 文本 -->
+<view class="textscan">
+  <text>商品条形码</text>
+</view>
+<!-- 输入框 -->
+<input type="number" placeholder="请输入条形码" class="inputscan" maxlength="20" value='{{num}}' disabled='false'/>
+<!-- 键盘布局 -->
+<view class="gridbox">
+  <view class="row">
+    <view class="col" >
+      <view class="col-4" data-num='1' bindtap='clicknum'>1</view>
+      <view class="col-4" data-num='2' bindtap='clicknum'>2</view>
+      <view class="col-4" data-num='3' bindtap='clicknum'>3</view>   
+    </view>
+      <view class="col">
+      <view class="col-4" data-num='4' bindtap='clicknum'>4</view>
+      <view class="col-4" data-num='5' bindtap='clicknum'>5</view>
+      <view class="col-4" data-num='6' bindtap='clicknum'>6</view>
+    </view>
+    <view class="col">  
+      <view class="col-4" data-num='7' bindtap='clicknum'>7</view>
+      <view class="col-4" data-num='8' bindtap='clicknum'>8</view>
+      <view class="col-4" data-num='9' bindtap='clicknum'>9</view>
+    </view> 
+    <view class="col">
+      <view class="col-4 orangecol marginNull" bindtap='delnum'>删除</view>
+      <view class="col-4 marginNull" data-num='0' bindtap='clicknum'>0</view>
+      <view class="col-4 greencol marginNull" bindtap='enternum'>确定</view>
+    </view>   
+  </view>
+</view>
+</view>
+</template>

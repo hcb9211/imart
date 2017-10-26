@@ -1,0 +1,9 @@
+<import src="/tool/dialog/dialog.wxml"/>
+<import src="/tool/toast/toast.wxml"/>
+<import src="/tool/select/select.wxml"/>
+<import src="/tool/loading/loading.wxml"/>
+<template is="dialog" data="{{ ...$wux.dialog }}"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<template is="select" data="{{ ...$wux.select }}"/>
+<template is="loading" data="{{ ...$wux.loading }}"/>
+

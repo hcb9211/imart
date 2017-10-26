@@ -1,0 +1,96 @@
+page{background: rgb(246, 246, 246)}
+.displayno{display: none}
+.right{float: right}
+/* 我的主页********************************************** */
+/* 头部分类  */
+.user-head{height: 290rpx;background-color: #d02e2e;padding-top: 20rpx;box-shadow: 0px -1rpx 30rpx 0px #d02e2e;}
+.user-head-portrait{width: 750rpx; height: 140rpx;display: flex;flex-direction: row}
+.head-img{width: 140rpx;height: 140rpx;padding-left: 20rpx;}
+.head-img>image{width: 100%;height: 100%;border-radius: 70rpx;}
+.head-name{width: 600rpx;padding-left: 20rpx;line-height: 140rpx;font-size: 28rpx;color: #FFF;font-family: "微软雅黑"; overflow:hidden;  text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical;-webkit-line-clamp:1;}
+.user-hend-option{width: 750rpx;height: 100rpx; margin-top: 50rpx;display: flex;flex-direction: row;justify-content: center;}
+.navigation{width: 94rpx;margin-left: 40rpx;margin-right: 40rpx;box-sizing: border-box;}
+.navigationborder{width: 94rpx;margin-left: 40rpx;margin-right: 40rpx;box-sizing: border-box; border-bottom: 2rpx solid #ffffff; }
+.user-hend-option view view{text-align: center;line-height: 50rpx; font-size: 28rpx;color: #ffffff;}
+/*内容  */
+/*没有订单部分  */
+.user-no{padding-top: 170rpx;text-align: center}
+.user-no image{width: 233rpx;height: 188rpx;}
+.user-no view{margin-top: 50rpx;font-size: 28rpx;color: #444444}
+/*有订单部分  */
+.user-list{padding-top: 20rpx;}
+/*店铺名称  */
+.user-store{height: 50rpx;padding: 10rpx 20rpx 10rpx 20rpx; background: #ffffff;}
+.user-store image{width: 40rpx; height: 40rpx;vertical-align:middle;}
+.user-store text{font-family: "微软雅黑";font-size: 30rpx;vertical-align: middle}
+.user-store .user-store-name{margin-left: 20rpx ;color: #444444;}
+.user-store .state{position: relative;top: 6rpx;color: #ff7e00;}
+/*商品内容  */
+.user-commodity{height: 200rpx;padding: 20rpx 20rpx 0rpx 20rpx;display: flex;flex-direction: row;background-color: #f8f8f8;}
+.comm-img{width: 160rpx;height: 160rpx;}
+.comm-img>image{width: 100%;height: 100%;}
+.comm-text{width: 530rpx;height: 260rpx;margin-left: 20rpx;}
+.comm-text .comm-text-name{width: 100%;height: 80rpx;line-height: 40rpx;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;font-size: 28rpx; }
+.comm-text .comm-text-num{margin-top: 45rpx;width: 100%;height: 30rpx;line-height: 30rpx;}
+.comm-text .comm-text-num .comm-text-num-pic{color: #d02e2e;font-size: 26rpx;}
+.comm-text .comm-text-num .comm-text-num-pic text{font-size: 36rpx;}
+.comm-text .comm-text-num .comm-text-num-pic .comm-text-num-picold{margin-left: 10rpx;font-size: 26rpx;color: #777777}
+.comm-text .comm-text-num .comm-text-num-pic .comm-text-num-picold text{font-size: 26rpx; text-decoration: line-through}
+.comm-text .comm-text-num .comm-text-num-piece{font-size: 36rpx;color: #666666}
+/*件数 合计  */
+.user-summation{height: 50rpx;padding: 10rpx 20rpx 20rpx 20rpx;background-color: #ffffff;border-bottom: 1rpx solid #eeeeee;}
+.user-summation .user-summation-num{font-size: 30rpx;color: #666666}
+.user-summation-pic{font-size: 26rpx;color: #d02e2e;position: relative;top: 10rpx;}
+.user-summation-pic text{font-size: 32rpx;}
+/*订单处理  */
+.user-ord{height: 80rpx;padding: 20rpx 20rpx 0rpx 20rpx;background-color: #ffffff;text-align: right;}
+.user-ord text{padding:5rpx 20rpx 5rpx 20rpx; border: 1rpx solid #888888;border-radius: 100rpx;margin-left: 30rpx;font-size: 35rpx;color: #888888;}
+.user-ord-payment,.user-ord-recheck,.user-ord-evaluate{border-color: #d02e2e !important;color: #d02e2e !important;}
+/*订单详情****************************************************************  */
+/*门店状态  */
+.ddxq-store{height: 90rpx;background-color: #ffffff;line-height: 70rpx;padding-top: 20rpx; font-family: "微软雅黑";font-size: 30rpx;}
+.ddxq-store image{width: 50rpx;height: 48rpx;margin-left: 20rpx;position: relative;top: 15rpx;color: #444444}
+.ddxq-store text{margin-left: 20rpx;vertical-align: middle}
+.ddxq-store-scc,.ddxq-store-paymentimg,.ddxq-store-reexamineimg,.ddxq-store-cancel{margin-right: 20rpx;color: #ff7e00;}
+/*商品列表  */
+.ddxq-list{height: 160rpx;padding: 20rpx;background-color: rgb(246, 246, 246);border-top: 10rpx solid #ffffff;display: flex;flex-direction: row;flex-wrap:nowrap;}
+.ddxq-list:first-child{border:0rpx;}
+.ddxq-comm-img{width: 160rpx;height: 160rpx;}
+.ddxq-comm-img image{width: 100%;height: 100%;}
+.ddxq-comm-text{width: 530rpx;margin-left: 20rpx;}
+.ddxq-comm-name{width: 530rpx;height: 80rpx;line-height: 40rpx; font-family: "微软雅黑";font-size: 28rpx;color: #222222;overflow:hidden;  text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical;-webkit-line-clamp:2;}
+.ddxq-comm-num{width: 530rpx;height: 30rpx;margin-top: 40rpx;font-size: 30rpx;}
+.ddxq-comm-price{font-size: 25rpx;color: #d02e2e}
+.ddxq-comm-price text{font-size: 30rpx;}
+.ddxq-comm-number{color: #666666}
+/*商品总价  活动优惠  应付总额*/
+.ddxq-total,.ddxq-discounts,.ddxq-payment{height: 80rpx;padding-left:20rpx;padding-right: 20rpx; display:flex; align-items: center;justify-content: space-between; background-color: #ffffff;font-size: 30rpx;color: #444444}
+.ddxq-discounts,.ddxq-payment{border-top: 1rpx solid rgb(246, 246, 246)}
+.ddxq-total-price,.ddxq-discounts-price,.ddxq-payment-price{font-size: 24rpx;color: #666666}
+.ddxq-total-price text,.ddxq-discounts-price text,.ddxq-payment-price text{font-size: 30rpx}
+/*订单号等详细信息  */
+.ddxq-message{margin-top: 20rpx;margin-bottom: 96rpx; padding: 10rpx 20rpx;background-color: #ffffff;}
+.ddxq-message view{line-height: 46rpx;font-size: 28rpx;color: #888888}
+/*条形码  */
+.ddxq-tiaoxingma{box-sizing: border-box;background: #ffffff;border-top: 1rpx solid #eeeeee;}
+/*订单操作  */
+.ddxq-operation{position: fixed;bottom: 0rpx;width: 710rpx;height: 56rpx; padding: 20rpx; background-color: #ffffff;border-top:1rpx solid rgb(246, 246, 246);  text-align: right}
+.ddxq-operation text{ margin-left: 20rpx;padding: 10rpx 20rpx;border: 1rpx solid #666666;border-radius: 30rpx; font-size: 26rpx;color: #666666;}
+.ddxq-operation text:nth-child(3){border-color: #999999;color: #999999}
+.ddxq-operation text:nth-child(4),.ddxq-operation text:nth-child(5),.ddxq-operation text:nth-child(6){border-color: #d02e2e;color: #d02e2e}
+/* 手机验证***************************************************************************************** */
+.bindingphone{position: absolute;top: -1rpx;left: 0rpx; width: 100%;height: 100%;background: rgba(123, 123, 123, 0.5);}
+.bp-content{position: relative; margin: 250rpx auto; width: 520rpx;height: 470rpx;background: #ffffff;border-radius: 20rpx;padding-top: 40rpx; font-family: "微软雅黑";}
+.bp-head{margin-bottom: 40rpx;width: 520rpx;height: 60rpx;text-align: center;font-size: 32rpx;color: #444444}
+.bp-phonenum{margin: 30rpx auto; width: 460rpx;height: 60rpx;border-bottom: 1rpx solid #bbbbbb;}
+.bp-phonenum input{font-size: 28rpx; color: #777777}
+.bp-verification{position: relative; margin: 30rpx auto; width: 460rpx;height: 60rpx;}
+.bp-verification .bp-verification-inp{width: 290rpx;height: 60rpx;border-bottom: 1rpx solid #bbbbbb}
+.bp-verification .bp-verification-inp input{width: 100%;font-size: 28rpx; color: #777777}
+.bp-verification .bp-verification-btn{ position: absolute;right: 0rpx;top: 0rpx;  width: 150rpx;height: 60rpx;box-sizing: border-box; border: 2rpx solid #d02e2e;border-radius: 4rpx; font-size: 24rpx; color: #d02e2e;text-align: center;line-height: 60rpx;}
+.bp-recommend{margin: 30rpx auto; width: 460rpx;height: 60rpx;font-size: 28rpx;}
+.bp-recommend input{width: 460rpx;height: 60rpx;border-bottom: 1rpx solid #bbbbbb}
+.bp-button{position: absolute;bottom: -4rpx; width: 100%;height: 80rpx;display: flex;flex-direction: row }
+.bp-button view{width: 50%;text-align: center;line-height: 80rpx;}
+.bp-button .bp-cancel{background: #ffffff; border-top: 1rpx solid #bbbbbb;border-bottom-left-radius:20rpx;font-size: 30rpx;color: #666666}
+.bp-button .bp-confirm{background-color: #d02e2e;border-bottom-right-radius: 20rpx; font-size: 30rpx;color: #ffffff}

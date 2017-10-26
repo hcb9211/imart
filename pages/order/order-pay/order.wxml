@@ -1,0 +1,94 @@
+<include src="/pages/common/common.wxml"/>
+<view class="cart-content">
+  <view class="cart-commodity">
+    <checkbox-group class="commodity-group" bindchange="checkboxChange">
+      <view class="commodity-soild" wx:for="{{goods.goodsList}}" wx:for-index="index" style="right:0rpx" >
+        <label>
+          <view class="comm-img">
+            <image src="{{item.productImage}}"></image>
+          </view>
+          <view class="comm-content">
+            <view class="comm-content-name">
+               {{item.commodityName}}
+            </view>
+            <view class="comm-content-number">
+              <text class="comm-content-price">
+                ￥<text class="comm-content-price-num">{{item.nowPrice}}</text>
+              </text>
+              <text class="comm-content-quantity order-number">
+                <text class="comm-quantity-num">x{{item.shopCount}}</text>
+              </text>
+            </view>
+          </view>
+        </label>
+      </view>
+    </checkbox-group>
+  </view>
+  <view class='orderlistbox'>
+      <view class="original-price">
+    <text class="original-price-head">订单原价</text>
+    <text class='original-price-content'>
+      <text class='original-price-content-symbol'>￥</text>
+      <text class='original-price-content-num'>{{goods.totalPrice}}</text>
+    </text>
+  </view>
+  <view class="discounts">
+    <text class='discounts-head'>优惠</text>
+    <text class='discounts-content'>
+      <text class='discounts-content-symbol'>满减优惠</text>
+      <text class='discounts-content-num' decode='true'> &nbsp;-￥{{order.coupon}}</text>
+    </text>
+  </view>
+  <view class="yimao-wallet">
+    <text class='yimao-wallet-head'>亿猫钱包</text>
+    <view class='yimao-wallet-content'>
+      <text class='yimao-wallet-content-symbol' wx-if="{{balance.useBalance}}">-￥{{balance.balancemoney}}</text>
+      <text class='yimao-wallet-content-symbol' style='color:#999'  wx-if="{{!balance.useBalance}}">可用余额：<text style='color:#d02e2e'>{{order.balance}}</text> </text>
+      
+        <radio class="yimao-wallet-content-radio" bindtap="useBalancechange" checked="{{balance.useBalance}}"  color="red" wx:if="{{order.balance > 0}}"/>
+    </view>
+  </view>
+  <view class="cash-coupon" bindtap="selectcouponpage">
+    <text class='cash-coupon-head'>代金券</text>
+    <text class='cash-coupon-content'>
+      <text class='cash-coupon-content-symbol'>-￥{{coupon.value}}</text>
+      <text class='iconfont icon-arrow-l'></text>
+    </text>
+  </view>
+  </view>
+
+
+  <view class="order-all" hidden="true">
+    <text>共{{goods.totalCount}}件商品</text>
+    <text>合计：</text>
+    <text>￥</text>
+    <text>{{goods.totalPromPrice}}</text>
+  </view>
+  <view class="order-pay"  hidden="true">
+    <view class="order-pay-text">支付方式</view>
+    <view class="order-pay-choose">
+      <image src="../../../image/wxzf.png"></image>
+      <text>微信支付</text>
+      <radio class="order-pay-choose-radio"  value="aa" color="red" style='position: relative;left: -16rpx;' checked="true"/>
+    </view>
+  </view>
+  
+</view>
+
+<view class="cart-order">
+    <view style='width:510rpx;height:110rpx;'>
+    <view class="order-sum" style="width:auto;line-height:55px;float: right;color:#666;margin-right:10rpx;">
+        应付：<text>￥</text><text>{{balance.payprice}}</text>
+      </view>
+        <view style="font-size:15px;line-height:57px;font-family:'微软雅黑';float: right;margin-right:20rpx;color:#666;">
+          <text>共{{goods.totalCount}}件商品</text>
+      </view>
+    </view>
+    
+    <view class="order-account" bindtap="ordersubmit">
+       提交订单   
+    </view>
+  </view>
+
+<import src="/pages/usercenter/bindingphone/bindingphone.wxml"/>
+<template is="bindingphone" data="{{ ...bindphone }}"/>
